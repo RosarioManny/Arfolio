@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const artworkSchema = new mongoose.Schema({
     title: { type: String, required: true },
-    date: Date, // artSchema goes in here
+    date: Date,
     medium: { type: String, required: true },
     size: String,
     description: String,
