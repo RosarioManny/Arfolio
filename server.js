@@ -7,13 +7,12 @@ const methodOverride = require("method-override");
 const morgan = require('morgan');
 const session = require("express-session");
 
-const signInRoutes = require('./routers/auth/sign-in.js');
-const signUpRoutes = require('./routers/auth/sign-up.js');
-const signOutsession = require('./routers/auth/sign-out.js');
+const authRoutes = require('./routers/auth/auth.js')
 
 const passUserToView = require("./middleware/pass-user-to-view.js");
 
 const profileRoutes = require('./routers/profile.js')
+const libraryRoutes = require('./routers/library.js')
 
 const port = process.env.PORT ? process.env.PORT : '3000'; 
 
@@ -38,10 +37,9 @@ app.get('/', (req, res) => { // HOME PAGE
     res.render("index.ejs")
 });
 
-app.use('/sign-in', signInRoutes); // SIGN-IN ROUTES
-app.use('/sign-up', signUpRoutes); // SIGN-UP ROUTES
-app.use('/sign-out', signOutsession) // SIGN-OUT 
+app.use('/auth', authRoutes)
 app.use('/profile', profileRoutes) // PROFILE ROUTES
+app.use('/library', libraryRoutes)
 
 app.listen(port, () => {
     console.log(`The express app is ready on port ${port}!`)

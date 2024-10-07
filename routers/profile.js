@@ -7,13 +7,7 @@ const Artworks = require('../models/artworks.js');
 
 router.get('/', async (req, res) => {
     try {
-        // const currentUser = await User.findById(req.session.user._id);
-        // const userArtworks = await Artworks.findById( { owner: req.session.user._id })
-        res.render('application/index.ejs',
-            // { userArtworks }
-            //  { about: currentUser.about},
-            //  { library: currentUser.library.works}
-            )
+        res.render('profile/index.ejs')
     } catch(error) {
         console.log(error)
         res.redirect('/')
@@ -21,7 +15,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/new', async (req, res) => {
-    res.render('application/new.ejs')
+    res.render('profile/new.ejs')
 });
 
 router.post('/', async (req, res) => {
