@@ -37,11 +37,7 @@ app.get('/', (req, res) => { // HOME PAGE
 
 app.use('/sign-in', signInRoutes); // SIGN-IN ROUTES
 app.use('/sign-up', signUpRoutes); // SIGN-UP ROUTES
-app.use('/sign-out', signOutsession)
-
-
-
-
+app.use('/sign-out', signOutsession) // SIGN-OUT 
 
 app.listen(port, () => {
     console.log(`The express app is ready on port ${port}!`)
