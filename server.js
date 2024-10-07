@@ -7,10 +7,10 @@ const methodOverride = require("method-override");
 const morgan = require('morgan');
 const session = require("express-session");
 
-const signInRoutes = require('./routers/auth/sign-in.js')
-const signUpRoutes = require('./routers/auth/sign-up.js')
-
-// const passUserToView = ("./middleware/pass-user-to-view.js")
+const signInRoutes = require('./routers/auth/sign-in.js');
+const signUpRoutes = require('./routers/auth/sign-up.js');
+const signOutsession = require('./routers/auth/sign-out.js');
+const passUserToView = require("./middleware/pass-user-to-view.js");
 
 const port = process.env.PORT ? process.env.PORT : '3000'; 
 
@@ -29,14 +29,17 @@ app.use(
         saveUninitialized: true,
     })
 );
-// app.use(passUserToView);
+app.use(passUserToView);
+
+app.get('/', (req, res) => { // HOME PAGE 
+    res.render("index.ejs")
+})
 
 app.use('/sign-in', signInRoutes); // SIGN-IN ROUTES
 app.use('/sign-up', signUpRoutes); // SIGN-UP ROUTES
+app.use('/sign-out', signOutsession)
 
-app.use('/', (req, res) => { // HOME PAGE 
-    res.render("index.ejs")
-})
+
 
 
 

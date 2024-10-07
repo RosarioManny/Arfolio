@@ -4,13 +4,13 @@ const bcrypt = require('bcrypt');
 
 const User = require('/Users/emmanuelr/seb/projects/Back-End-Project/models/user.js');
 
-router.get('/', (req, res) => {
+router.get('/', (req, res) => { // Sign-in route
     res.render('auth/sign-in.ejs')
 });
-
-router.post('/sign-in', async (req, res) => {
+  
+router.post('/', async (req, res) => {
     try {
-        const userInDatabase = await User.findONe({ username: req.body.username });
+        const userInDatabase = await User.findOne({ username: req.body.username });
         if (!userInDatabase){
             return res.send('Login failed. Try again')
         } 
@@ -29,10 +29,13 @@ router.post('/sign-in', async (req, res) => {
             _id: userInDatabase._id
         }
 
+        res.redirect("/")
     } catch(error) {
         console.log(error);
         res.redirect('/')
     }
 });
+
+
 
 module.exports = router

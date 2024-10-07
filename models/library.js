@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const librarySchema = new mongoose.Schema({
     name: String,
-    works: [ ], // artSchema goes in here
+    works: [{type: mongoose.Schema.Types.ObjectId, ref: "Artwork"}], // artSchema goes in here
     owner: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
 })
 
