@@ -10,8 +10,10 @@ const session = require("express-session");
 const signInRoutes = require('./routers/auth/sign-in.js');
 const signUpRoutes = require('./routers/auth/sign-up.js');
 const signOutsession = require('./routers/auth/sign-out.js');
+
 const passUserToView = require("./middleware/pass-user-to-view.js");
-const profileRoutes = require('./routers/application.js')
+
+const profileRoutes = require('./routers/profile.js')
 
 const port = process.env.PORT ? process.env.PORT : '3000'; 
 
@@ -39,7 +41,7 @@ app.get('/', (req, res) => { // HOME PAGE
 app.use('/sign-in', signInRoutes); // SIGN-IN ROUTES
 app.use('/sign-up', signUpRoutes); // SIGN-UP ROUTES
 app.use('/sign-out', signOutsession) // SIGN-OUT 
-app.use('/profile', profileRoutes)
+app.use('/profile', profileRoutes) // PROFILE ROUTES
 
 app.listen(port, () => {
     console.log(`The express app is ready on port ${port}!`)
