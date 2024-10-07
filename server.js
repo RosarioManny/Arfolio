@@ -33,11 +33,13 @@ app.use(
 );
 app.use(passUserToView);
 
+app.use('/auth', authRoutes)
+
 app.get('/', (req, res) => { // HOME PAGE 
     res.render("index.ejs")
 });
 
-app.use('/auth', authRoutes)
+
 app.use('/profile', profileRoutes) // PROFILE ROUTES
 app.use('/library', libraryRoutes)
 
