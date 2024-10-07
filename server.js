@@ -32,13 +32,13 @@ app.use(
 // app.use(passUserToView);
 
 app.use('/sign-in', signInRoutes); // SIGN-IN ROUTES
-app.use('/sign-up', signUpRoutes); 
+app.use('/sign-up', signUpRoutes); // SIGN-UP ROUTES
 
 app.use('/', (req, res) => { // HOME PAGE 
     res.render("index.ejs")
 })
 
- // SIGN-UP ROUTES
+
 
 app.listen(port, () => {
     console.log(`The express app is ready on port ${port}!`)
