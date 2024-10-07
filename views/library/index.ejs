@@ -8,6 +8,17 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>All Your Works</h1>
+    <% if (artworks.length) { %>
+        <% artworks.forEach((artwork) => { %>
+          
+            <ul>
+                <a>
+                    <li> <%= artwork.artwork %> || Title: <%= artwork.title %></li>
+                </a>
+            </ul>
+        <% }) %>
+    <% } %>
     <a href="/library/new">Add Works</a>
+    <a href="/'library/edit">Edit Works</a>
 </body>
 </html>

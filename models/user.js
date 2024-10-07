@@ -13,7 +13,6 @@ const userSchema = new mongoose.Schema({
     image: String,
     about: [aboutSchema],
     library: {type: mongoose.Schema.Types.ObjectId, ref: "Library" },
-
 });
 
 

@@ -10,6 +10,7 @@ const session = require("express-session");
 const authRoutes = require('./routers/auth/auth.js')
 
 const passUserToView = require("./middleware/pass-user-to-view.js");
+const isSignedIn = require('./middleware/is-signed-in.js');
 
 const profileRoutes = require('./routers/profile.js')
 const libraryRoutes = require('./routers/library.js')
@@ -33,12 +34,12 @@ app.use(
 );
 app.use(passUserToView);
 
-app.use('/auth', authRoutes)
-
 app.get('/', (req, res) => { // HOME PAGE 
     res.render("index.ejs")
 });
 
+app.use('/auth', authRoutes)
+// app.use(isSignedIn)
 
 app.use('/profile', profileRoutes) // PROFILE ROUTES
 app.use('/library', libraryRoutes)
