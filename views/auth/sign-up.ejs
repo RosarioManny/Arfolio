@@ -6,14 +6,16 @@
     <title>Sign In</title>
 </head>
 <body>
-    <h1>Sign In</h1>
+    <h1>Sign Up: Create Your Artfolio Account!</h1>
     
-    <form action="/auth/sign-in" method="POST">
+    <form action="/auth/sign-up" method="POST">
         <label for="username">Username: </label>
         <input type="text" id="username" name="username">
         <label for="password">Password: </label>
         <input type="password" name="password" id="password">
-        <button type="submit">Sign In</button>
+        <label for="password">Confirm Password: </label>
+        <input type="password" name="password" id="password">
+        <button type="submit">Sign Up</button>
     </form>
 </body>
 </html>
