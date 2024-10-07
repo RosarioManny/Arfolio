@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+
+    <h1>Editing your Information</h1>
+    <form action="" method="POST">
+        <label for="name">Full Name: </label>
+        <input type="text" name="name" id="name">
+        <label for="mainMedium">Main Medium: </label>
+        <input type="text" name="mainMedium" id="mainMedium">
+        <label for="contacts">Contacts: </label>
+        <input type="text" name="contacts" id="contacts">
+        <label for="website">Website: </label>
+        <input type="text" name="website" id="website">
+        <label for="image">Profile Image: </label>
+        <input type="text" name="image" id="image">
+    </form>
+</body>
+</html>

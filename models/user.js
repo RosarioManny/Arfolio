@@ -5,7 +5,7 @@ const aboutSchema = new mongoose.Schema({
     mainMedium: { type:String, required: true },
     website: String,
     contacts: String
-})
+});
 
 const userSchema = new mongoose.Schema({
     username: { type: String, required: true },
