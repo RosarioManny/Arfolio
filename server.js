@@ -16,6 +16,7 @@ mongoose.connection.on("connected", () => {
 });
 
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
 app.use(
     session ({
         secret: process.env.SESSION_SECRET,
@@ -23,6 +24,10 @@ app.use(
         saveUninitialized: true,
     })
 );
+
+app.use('/', (req, res) => {
+    res.render("index.ejs")
+})
 
 app.listen(port, () => {
     console.log(`The express app is ready on port ${port}!`)
