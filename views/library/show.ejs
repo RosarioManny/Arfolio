@@ -6,6 +6,19 @@
     <title>Artworks name</title>
 </head>
 <body>
-    
+    <%- include('../partials/_navbar.ejs') %>
+    <h1><%= artwork.title%> </h1>
+    <p><%= artwork.artwork %></p>
+    <p>Genre: <%= artwork.genre %></p>
+    <p>Size: <%= artwork.size %></p>
+    <p>Date: <%= artwork.date %></p>
+    <p>Medium: <%= artwork.medium %></p>
+    <p>Description: a<%= artwork.description %></p>
+    <a>
+        <button>Edit</button>
+    </a>
+    <a>
+        <button>Delete</button>
+    </a>
 </body>
 </html>

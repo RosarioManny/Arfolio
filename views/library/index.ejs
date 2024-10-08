@@ -10,12 +10,9 @@
     <h1>All Your Works</h1>
     <% if (artworks.length) { %>
         <% artworks.forEach((artwork) => { %>
-          
-            <ul>
-                <a>
-                    <li> <%= artwork.artwork %> || Title: <%= artwork.title %></li>
+                <a href="/library/<%= artwork._id %>">
+                    <p> <%= artwork.artwork %> || Title: <%= artwork.title %></p>
                 </a>
-            </ul>
         <% }) %>
     <% } %>
     <a href="/library/new">Add Works</a>

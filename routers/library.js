@@ -45,7 +45,7 @@ router.get("/:artworkId", async (req, res) => {
     try{
         const artwork = await Artworks.findById(req.params.artworkId)
         if (artwork.owner.toString() === req.session.user._id) {
-            res.render("artwork/show.ejs", { artwork })
+            res.render("library/show.ejs", { artwork })
         } else {
             res.redirect("/")
         } 
