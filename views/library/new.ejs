@@ -8,10 +8,10 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Add Works!</h1>
-    <form action="/library" method="POST" enctype="multipart/form-data">
+    <form action="/library" method="POST">
         <div>
             <label for="artwork">Artwork Link: </label>
-            <input type="text" name="artwork" id="artwork" accept="image/*"required>
+            <input type="text" name="artwork" id="artwork" required>
 
             <label for="title">Title: </label>
             <input type="text" name="title" id="title" required>

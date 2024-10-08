@@ -4,15 +4,15 @@ const router = express.Router();
 const User = require('../models/user.js');
 const Artworks = require('../models/artworks.js');
 
-// router.get('/', async (req, res) => {
-//     try {
-//         const artworks = await Artworks.find( {owner: req.session.user._id});
-//         res.render('profile/index.ejs', { artworks }); 
-//     } catch(error) {
-//         console.log(error);
-//         res.redirect('/');
-//     }
-// })
+router.get('/', async (req, res) => {
+    try {
+        const artworks = await Artworks.find( {owner: req.session.user._id});
+        res.render('profile/index.ejs', { artworks }); 
+    } catch(error) {
+        console.log(error);
+        res.redirect('/');
+    }
+})
 
 router.get('/new', async (req, res) => {
     try {
@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
 router.get("/:artworkId", async (req, res) => {
     try{
         const artwork = await Artworks.findById(req.params.artworkId)
-        if (artwork.owner.toString() === req.session.user._id) {
+        if (artwork.owner.toString() === req.params.artworkId) {
             res.render("library/show.ejs", { artwork })
         } else {
             res.redirect("/")

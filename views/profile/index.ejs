@@ -8,12 +8,12 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Hello <%= user.username %></h1>
-    <p></p>Profile
-    name
-    contacts
-    website
-    mainMedium
-
+    <p>
+        <%=  userAbout.name%>
+        <%=  userAbout.contacts%>
+        <%=  userAbout.website%>
+        <%=  userAbout.mainMedium%>
+    </p>
     <a href="/profile/<%= user._id%>/edit">Edit Profile</a>
 
     <h1>Your Library</h1>
