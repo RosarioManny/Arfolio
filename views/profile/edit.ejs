@@ -9,19 +9,39 @@
     <%- include('../partials/_navbar.ejs') %>
     <h1>Editting your About me...</h1>
     <div>
-        <form action="/profile/<%= user._id %>?_method=PUT"  method="POST">
+        <form action="/profile?_method=PUT"  method="POST">
             <div>
                 <label for="name">Name: </label>
-                <input type="text" name="name" id="name">
+                <input 
+                type="text" 
+                name="name" 
+                id="name"
+                value="<%= userAbout.name %>"
+                >
     
                 <label for="mainMedium">Main Medium: </label>
-                <input type="text" name="mainMedium" id="mainMedium">
+                <input 
+                type="text" 
+                name="mainMedium" 
+                id="mainMedium"
+                value="<%= userAbout.mainMedium %>"
+                >
         
                 <label for="contacts">Contacts: </label>
-                <input type="text" name="contacts" id="contacts">
+                <input 
+                type="text" 
+                name="contacts" 
+                id="contacts" 
+                value="<%= userAbout.contacts %>"
+                >
         
                 <label for="website">Website: </label>
-                <input type="text" name="website" id="website">
+                <input 
+                type="text" 
+                name="website" 
+                id="website"
+                value="<%= userAbout.website %>"
+                >
             <button type="submit">Submit</button>
         </form>
         

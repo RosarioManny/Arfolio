@@ -16,13 +16,10 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.put('/:profileId', async (req, res) => {
+router.put('/', async (req, res) => {
     try {
-        const currentUser = await User.findById(req.params.profileId);
-        // const userAbout = currentUser.about(req.params.profileId);
-        console.log(currentUser)
-        // userAbout.set(req.body)
-
+        const currentUser = await User.findById(req.session.user._id);
+        console.log(currentUser);
         currentUser.aboutMe = {
             name: req.body.name,
             contacts: req.body.contacts,
@@ -32,7 +29,7 @@ router.put('/:profileId', async (req, res) => {
 
         await currentUser.save()
         
-        res.redirect(`/profile/${currentUser._id}`)
+        res.redirect(`/profile/`)
     } catch(error) {
         console.log(error);
         res.redirect("/")
@@ -42,8 +39,9 @@ router.put('/:profileId', async (req, res) => {
 router.get('/:profileId/edit', async (req, res) => {
     try {
         const currentUser = await User.findById(req.params.profileId)
+        const userAbout = await currentUser.aboutMe
         if (currentUser._id == req.session.user._id) {
-            res.render("profile/edit.ejs", { about: currentUser.about })
+            res.render("profile/edit.ejs", { userAbout })
         
         } 
     } catch(error) {

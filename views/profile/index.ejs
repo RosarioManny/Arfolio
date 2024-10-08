@@ -7,12 +7,16 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Hello <%= user.username %></h1>
+    <h1>Hello
+        <% if (userAbout.name) {%>
+        <%= userAbout.name %></h1>
+        <% } else {%>
+            <%= user.username %>
+        <% } %>
     <p>
-        <%=  userAbout.name%>
-        <%=  userAbout.contacts%>
-        <%=  userAbout.website%>
-        <%=  userAbout.mainMedium%>
+        <%= userAbout.contacts%>
+        <%= userAbout.website%>
+        <%= userAbout.mainMedium%>
     </p>
     <a href="/profile/<%= user._id%>/edit">Edit Profile</a>
 
