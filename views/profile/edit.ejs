@@ -6,24 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="POST">
-
-        <label for="name">Full Name: </label>
-        <input type="text" name="name" id="name">
-
-        <label for="mainMedium">Main Medium: </label>
-        <input type="text" name="mainMedium" id="mainMedium">
-
-        <label for="contacts">Contacts: </label>
-        <input type="text" name="contacts" id="contacts">
-
-        <label for="website">Website: </label>
-        <input type="text" name="website" id="website">
-
-        <label for="image">Profile Image: </label>
-        <input type="text" name="image" id="image">
-        
-    </form>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Editting your About me...</h1>
+    <div>
+        <form action="/profile/" method="POST">
+            <div>
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name">
     
+                <label for="mainMedium">Main Medium: </label>
+                <input type="text" name="mainMedium" id="mainMedium">
+        
+                <label for="contacts">Contacts: </label>
+                <input type="text" name="contacts" id="contacts">
+        
+                <label for="website">Website: </label>
+                <input type="text" name="website" id="website">
+            <button type="submit">Submit</button>
+        </form>
+        
+    </div>
 </body>
 </html>

@@ -9,7 +9,16 @@
     <%- include('../partials/_navbar.ejs') %>
     <h1>Hello <%= user.username %></h1>
     Profile
-    <a href='/library'>Library</a>
-    <a href="/profile/new">Edit Profile</a>
+    <a href="/profile/edit">Edit Profile</a>
+
+    <h1>All Your Works</h1>
+    <a href="/library/new">Add Works</a>
+    <% if (artworks.length) { %>
+        <% artworks.forEach((artwork) => { %>
+                <a href="/library/<%= artwork._id %>">
+                    <p> <%= artwork.artwork %> || Title: <%= artwork.title %></p>
+                </a>
+        <% }) %>
+    <% } %>
 </body>
 </html>

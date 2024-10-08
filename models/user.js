@@ -11,10 +11,9 @@ const userSchema = new mongoose.Schema({
     username: { type: String, required: true },
     password: { type: String, required: true },
     image: String,
-    about: [aboutSchema],
-    library: {type: mongoose.Schema.Types.ObjectId, ref: "Library" },
+    about: aboutSchema,
+    library: [{type: mongoose.Schema.Types.ObjectId, ref: "Artwork" }],
 });
-
 
 const User = mongoose.model('User', userSchema);
 
