@@ -8,7 +8,8 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1><%= artwork.title%> </h1>
-    <p><img src="<%= artwork.artwork %>"></p>
+    <img src="<%= artwork.artwork %>">
+    
     <p>Genre: <%= artwork.genre %></p>
     <p>Size: <%= artwork.size %></p>
     <p>Date: <%= artwork.date %></p>

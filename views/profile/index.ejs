@@ -8,10 +8,15 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Hello <%= user.username %></h1>
-    Profile
-    <a href="/profile/edit">Edit Profile</a>
+    <p></p>Profile
+    name
+    contacts
+    website
+    mainMedium
 
-    <h1>All Your Works</h1>
+    <a href="/profile/<%= user._id%>/edit">Edit Profile</a>
+
+    <h1>Your Library</h1>
     <a href="/library/new">Add Works</a>
     <% if (artworks.length) { %>
         <% artworks.forEach((artwork) => { %>

@@ -6,6 +6,8 @@ const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const morgan = require('morgan');
 const session = require("express-session");
+const multer = require('multer')
+const upload = multer({ dest: 'uploads/'})
 
 const authRoutes = require('./routers/auth/auth.js')
 

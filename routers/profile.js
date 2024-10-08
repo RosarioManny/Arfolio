@@ -8,13 +8,41 @@ router.get('/', async (req, res) => {
     try {
         const artworks = await Artworks.find({owner: req.session.user._id});
         // const userAbout = await User.find( {about})
-        res.render('profile/index.ejs', { artworks})
+        res.render('profile/index.ejs', { artworks })
     } catch(error) {
         console.log(error)
         res.redirect('/')
     }
 });
 
+router.put('/:profileId', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.params.profileId);
+        const userAbout = currentUser.about.id(req.params.profileId);
+        
+        userAbout.set(req.body)
+
+        await currentUser.save()
+        
+        res.redirect(`/profile/${currentUser._id}`)
+    } catch(error) {
+        console.log(error);
+        res.redirect("/")
+    }
+})
+
+router.get('/:profileId/edit', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.params.profileId)
+        if (currentUser._id == req.session.user._id) {
+            res.render("profile/edit.ejs", { about: currentUser.about })
+        
+        } 
+    } catch(error) {
+    console.log(error);
+    res.redirect('/')
+}
+})
 // router.get('/edit', async (req, res) => {
 //     res.render('profile/edit.ejs')
 // });

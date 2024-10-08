@@ -4,15 +4,15 @@ const router = express.Router();
 const User = require('../models/user.js');
 const Artworks = require('../models/artworks.js');
 
-router.get('/', async (req, res) => {
-    try {
-        const artworks = await Artworks.find( {owner: req.session.user._id});
-        res.render('profile/index.ejs', { artworks }); 
-    } catch(error) {
-        console.log(error);
-        res.redirect('/');
-    }
-})
+// router.get('/', async (req, res) => {
+//     try {
+//         const artworks = await Artworks.find( {owner: req.session.user._id});
+//         res.render('profile/index.ejs', { artworks }); 
+//     } catch(error) {
+//         console.log(error);
+//         res.redirect('/');
+//     }
+// })
 
 router.get('/new', async (req, res) => {
     try {
