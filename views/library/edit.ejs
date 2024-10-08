@@ -7,6 +7,59 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
+    <h1>Edit Artworks</h1>
+    <form action="/library/<%= artwork._id %>?_method=PUT" method="POST">
+        <div>
+            <label for="artwork">Artwork: </label>
+            <input 
+            type="file" 
+            name="artwork" 
+            id="artwork" 
+            accept="image/*"
+            value="<%= artwork.artwork %>"
+            >
+
+            <label for="title">Title: </label>
+            <input 
+            type="text" 
+            name="title" 
+            id="title" 
+            value="<%= artwork.title %>" 
+            >
+    
+            <label for="medium">Medium: </label>
+            <input 
+            type="text" 
+            name="medium" 
+            id="medium" 
+            value="<%= artwork.medium %>"
+            >
+    
+            <label for="date">Date: </label>
+            <input 
+            type="date" 
+            name="date" 
+            id="date"
+            value="<%= artwork.date %>"
+            >
+    
+            <label for="size">Size: </label>
+            <input 
+            type="text" 
+            name="size" 
+            id="size"
+            value="<%= artwork.size %>"
+            >
+            <label for="genre">Genre: </label>
+            <input 
+            type="text" 
+            name="genre" 
+            id="genre"
+            value="<%= artwork.genre %>"
+            >
+        </div>
+        <button type="submit">Edit Artwork</button>
+    </form>
     
 </body>
 </html>

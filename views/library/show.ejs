@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artworks name</title>
+    <title><%= artwork.title %></title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1><%= artwork.title%> </h1>
-    <p><%= artwork.artwork %></p>
+    <p><img src="<%= artwork.artwork %>"></p>
     <p>Genre: <%= artwork.genre %></p>
     <p>Size: <%= artwork.size %></p>
     <p>Date: <%= artwork.date %></p>
     <p>Medium: <%= artwork.medium %></p>
     <p>Description: a<%= artwork.description %></p>
-    <a>
+    <a href="/library/<%= artwork._id%>/edit">
         <button>Edit</button>
     </a>
-    <a>
-        <button>Delete</button>
-    </a>
+    <form action="/library/<%= artwork._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
 </body>
 </html>

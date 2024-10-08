@@ -16,7 +16,7 @@
     <% if (artworks.length) { %>
         <% artworks.forEach((artwork) => { %>
                 <a href="/library/<%= artwork._id %>">
-                    <p> <%= artwork.artwork %> || Title: <%= artwork.title %></p>
+                    <p> <img src="<%= artwork.artwork %>"> || Title: <%= artwork.title %></p>
                 </a>
         <% }) %>
     <% } %>

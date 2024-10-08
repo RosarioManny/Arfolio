@@ -42,7 +42,7 @@ app.use('/auth', authRoutes)
 // app.use(isSignedIn)
 
 app.use('/profile', profileRoutes) // PROFILE ROUTES
-app.use('/library', libraryRoutes)
+app.use('/library', libraryRoutes) // ARTWORKS
 
 app.listen(port, () => {
     console.log(`The express app is ready on port ${port}!`)

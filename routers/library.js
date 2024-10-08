@@ -7,7 +7,7 @@ const Artworks = require('../models/artworks.js');
 router.get('/', async (req, res) => {
     try {
         const artworks = await Artworks.find( {owner: req.session.user._id});
-        res.render('library/index.ejs', { artworks }); 
+        res.render('profile/index.ejs', { artworks }); 
     } catch(error) {
         console.log(error);
         res.redirect('/');
@@ -54,5 +54,50 @@ router.get("/:artworkId", async (req, res) => {
         res.redirect('/')
     }
 })
+
+router.delete("/:artworkId", async (req, res) => {
+    try {
+        const artwork = await Artworks.findById(req.params.artworkId);
+        if (artwork.owner.toString() == req.session.user._id) {
+            await Artworks.findByIdAndDelete(req.params.artworkId);
+            res.redirect("/library");
+        } else {
+            res.redirect("/");
+        } 
+    } catch (error) {
+        console.log(error);
+        res.redirect("/");
+    }
+});
+
+router.get("/:artworkId/edit", async (req, res) => {
+    try {
+    const artwork = await Artworks.findById(req.params.artworkId);
+    if (artwork.owner.toString() == req.session.user._id) {
+        res.render("library/edit.ejs", { artwork })
+    } else {
+        res.redirect("/")
+    }
+    } catch(error) {
+        console.log(error);
+        res.redirect("/")
+    }
+})
+
+router.put("/:artworkId", async (req, res) => {
+    try {
+        const artwork = await Artworks.findById(req.params.artworkId);
+        if (artwork.owner.toString() == req.session.user._id) {
+            await Artworks.findByIdAndUpdate(req.params.artworkId, req.body);
+
+            res.redirect(`/library/${req.params.artworkId}`);
+        }  else {
+            res.redirect("/")
+        }
+    } catch (error) {
+        console.log(error);
+        res.redirect("/")
+    }
+});
 
 module.exports = router
