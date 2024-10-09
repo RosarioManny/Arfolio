@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Sign Up</title>
 </head>
 <body>
     <h1 id="Artfolio-sign">Artfolio</h1>
     <h2>Sign Up: Create Your Artfolio Account!</h2>
     <form action="/auth/sign-up" method="POST">
-        <label for="username">Username: </label>
-        <input type="text" id="username" name="username" required>
-        <label for="password">Password: </label>
-        <input type="password" name="password" id="password" required>
-        <label for="confirmPassword">Confirm Password: </label>
-        <input type="password" name="confirmPassword" id="confirmPassword">
+        <p class="sign-inputs">
+            <label for="username">Username: </label>
+            <input type="text" id="username" name="username" required>
+        </p>
+        <p class="sign-inputs">
+            <label for="password">Password: </label>
+            <input type="password" name="password" id="password" required>
+        </p>
+        <p class="sign-inputs">
+            <label for="confirmPassword">Confirm Password: </label>
+            <input type="password" name="confirmPassword" id="confirmPassword">
+        </p>
         <button type="submit">Sign Up</button>
     </form>
 </body>

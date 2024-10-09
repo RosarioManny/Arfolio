@@ -7,6 +7,7 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
+    <hr>
     <h1>Editting your About me...</h1>
     <div>
         <form action="/profile?_method=PUT"  method="POST">
@@ -16,7 +17,11 @@
                 type="text" 
                 name="name" 
                 id="name"
-                value="<%= userAbout.name %>"
+                value="<% if (!userAbout) {%>
+                    <%= "" %>
+                <% } else {%>
+                        <%= userAbout.name %>    
+                <% } %>"
                 >
     
                 <label for="mainMedium">Main Medium: </label>
@@ -24,7 +29,11 @@
                 type="text" 
                 name="mainMedium" 
                 id="mainMedium"
-                value="<%= userAbout.mainMedium %>"
+                value="<% if (!userAbout) {%>
+                    <%= "" %>
+                <% } else {%>
+                        <%= userAbout.mainMedium %>    
+                <% } %>"
                 >
         
                 <label for="contacts">Contacts: </label>
@@ -32,7 +41,11 @@
                 type="text" 
                 name="contacts" 
                 id="contacts" 
-                value="<%= userAbout.contacts %>"
+                value="<% if (!userAbout) {%>
+                    <%= "" %>
+                <% } else {%>
+                        <%= userAbout.contacts %>    
+                <% } %>"
                 >
         
                 <label for="website">Website: </label>
@@ -40,7 +53,11 @@
                 type="text" 
                 name="website" 
                 id="website"
-                value="<%= userAbout.website %>"
+                value="<% if (!userAbout) {%>
+                    <%= "" %>
+                <% } else {%>
+                        <%= userAbout.website %>    
+                <% } %>"
                 >
             <button type="submit">Submit</button>
         </form>
