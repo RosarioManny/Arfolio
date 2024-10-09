@@ -24,6 +24,7 @@ router.put('/', async (req, res) => {
             contacts: req.body.contacts,
             website: req.body.website,
             mainMedium: req.body.mainMedium,
+            bio: req.body.bio
         }
 
         await currentUser.save()

@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/show.css" />
     <title>Arfolio</title>
 </head>
+<%- include('./partials/_navbar.ejs') %>
 <body>
-    <%- include('./partials/_navbar.ejs') %>
+   <Article id="home-container">
     <hr>
-    <h2>Artfolio: The <em>Artist</em> portfolio</h2>
-    <div class="art-container">
-        <% artworks.forEach((artwork) => { %>
-            <div class="home-artwork">
-                <img src="<%= artwork.artwork %>">
-                <p><%= artwork.title%> </p>
-            </div>
-        <% }) %>
-    </div>
+       <h2>Artfolio: The <em>Artist</em> portfolio</h2>
+       <article class="art-container">
+           <% artworks.forEach((artwork) => { %>
+               <div class="home-artwork">
+                   <img src="<%= artwork.artwork %>">
+                   <div id="art-details">
+                       <p> <%= artwork.title%></p>
+                   </div>
+               </div>
+               
+           <% }) %>
+       </article>
+   </Article>
 </body>
 </html>

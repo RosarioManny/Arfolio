@@ -59,6 +59,20 @@
                         <%= userAbout.website %>    
                 <% } %>"
                 >
+                
+                <label for="bio">Biography: </label>
+                <textarea 
+                type="text" 
+                name="bio" 
+                id="bio"
+                row="50"
+                cols="50"
+                value="<% if (!userAbout) {%>
+                    <%= %>
+                <% } else {%>
+                        <%= userAbout.bio %>    
+                <% } %>"
+                ></textarea>
             <button type="submit">Submit</button>
         </form>
         

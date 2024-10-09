@@ -8,24 +8,30 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <hr>
-    <h1>Hello
+    <h1>
         <% if (!userAbout) {%>
-            <%= user.username %> 
+        Your <em>Folio</em>, <%= user.username %> 
     </h1>
-
         <% } else {%>
             <h1> 
-                <%= userAbout.name %>    
+                Your <em>Folio</em>, <%= userAbout.name %>    
             </h1>
             <p>
                 <%= userAbout.contacts%>
+            </p>
+            <p>
                 <%= userAbout.website%>
+            </p>
+            <p>
                 <%= userAbout.mainMedium%>
+            </p>
+            <p>
+                <%= userAbout.bio%>
             </p>
         <% } %>
 
     <a href="/profile/<%= user._id%>/edit">Edit Profile</a>
-
+    <hr />
     <h1>Your Library</h1>
     <a href="/library/new">Add Works</a>
     <% if (artworks.length) { %>

@@ -12,6 +12,7 @@ const passUserToView = require("./middleware/pass-user-to-view.js");
 const isSignedIn = require("./middleware/is-signed-in.js");
 
 const Artworks = require("./models/artworks.js")
+const User = require("./models/user.js")
 const authRoutes = require('./routers/auth/auth.js')
 const profileRoutes = require('./routers/profile.js')
 const libraryRoutes = require('./routers/library.js')

@@ -1,0 +1,39 @@
+/* Color Palette 
+Background = #F0F8FF - White
+Button Border = #A9B3CE - Light Grey
+Important = #D64045 - Red
+Notice Me = #318EFF - Blue
+Default Font = #1B2021 - Black
+*/
+
+#home-container {
+    height: 100%;
+    background-color: #F0F8FF ;
+}
+
+.art-container {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-evenly;
+    justify-items: flex-start;
+    /* background-color: wheat; */
+    /* gap: auto; */
+}
+.home-artwork {
+    display: flex;
+    flex-flow: column;
+    width: 25%;
+    height: 25%;
+    object-fit: contain;
+}
+
+img {
+    width: 500px;
+    height: 500px;
+}
+
+#art-details {
+    display: flex;
+    justify-content: space-between;
+    color: red;
+}
