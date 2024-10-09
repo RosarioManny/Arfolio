@@ -4,20 +4,18 @@ const router = express.Router();
 const User = require('../models/user.js');
 const Artworks = require('../models/artworks.js');
 
+// GET - SHOW PROFILE PAGE
 router.get('/', async (req, res) => {
     try {
-        // const artworks = await Artworks.find( {owner: req.session.user._id});
-        // const currentUser = await User.findById(req.session.user._id)
-        // const userAbout = await currentUser.aboutMe;
         res.redirect("/profile/")
-        // res.render('profile/index.ejs', { artworks, userAbout }); 
     } catch(error) {
         console.log(error);
         res.redirect('/');
     }
 })
 
-router.get('/new', async (req, res) => { // ADD WORKS PAGE
+// GET - SHOW ADD WORKS PAGE
+router.get('/new', async (req, res) => { 
     try {
         res.render('library/new.ejs');
     } catch (error) {
@@ -26,9 +24,8 @@ router.get('/new', async (req, res) => { // ADD WORKS PAGE
     }
 });
 
-
-
-router.get("/:artworkId", async (req, res) => { // SHOW PAGE
+// GET - SHOW PAGE
+router.get("/:artworkId", async (req, res) => { 
     try{
         const artwork = await Artworks.findById(req.params.artworkId)
         if (artwork.owner.toString() === req.session.user._id) {
@@ -43,7 +40,8 @@ router.get("/:artworkId", async (req, res) => { // SHOW PAGE
     }
 })
 
-router.get("/:artworkId/edit", async (req, res) => { // EDIT PAGE
+// GET - SHOW EDIT PAGE
+router.get("/:artworkId/edit", async (req, res) => { 
     try {
     const artwork = await Artworks.findById(req.params.artworkId);
     if (artwork.owner.toString() == req.session.user._id) {
@@ -57,7 +55,8 @@ router.get("/:artworkId/edit", async (req, res) => { // EDIT PAGE
     }
 })
 
-router.delete("/:artworkId", async (req, res) => { // DELETE REQUEST FROM SHOW PAGE
+// DELETE - DELETE REQUEST FROM SHOW PAGE
+router.delete("/:artworkId", async (req, res) => { 
     try {
         const artwork = await Artworks.findById(req.params.artworkId);
         const currentUser = await User.findById(req.session.user._id)
@@ -75,28 +74,13 @@ router.delete("/:artworkId", async (req, res) => { // DELETE REQUEST FROM SHOW P
     }
 });
 
-
-
-// router.put("/:artworkId", async (req, res) => {
-//     try {
-//         const artwork = await Artworks.findById(req.params.artworkId);
-//         if (artwork.owner.toString() == req.session.user._id) {
-//             await artwork.findByIdAndUpdate(req.params.artworkId, req.body);
-
-//             res.redirect(`/library/${req.params.artworkId}`);
-//         }  else {
-//             res.redirect("/")
-//         }
-//     } catch (error) {
-//         console.log(error);
-//         res.redirect("/")
-//     }
-// });
-
+// PUT - EDIT ARTWORKS PAGE
 router.put('/:artworkId', async (req, res) => {
     try {
         const artwork = await Artworks.findById(req.params.artworkId);
+        
         artwork.set(req.body);
+        
         await artwork.save();
         
         res.redirect(`/library/${artwork._id}`);
@@ -106,7 +90,7 @@ router.put('/:artworkId', async (req, res) => {
     }
 })
 
-
+// POST - ADDING NEW ARTWORK 
 router.post('/', async (req, res) => {
     try {
         const artData = {
@@ -115,11 +99,8 @@ router.post('/', async (req, res) => {
         }
         const artwork = new Artworks(artData);
         await artwork.save()
-        const artworks = await Artworks.find( {owner: req.session.user._id});
-        const currentUser = await User.findById(req.session.user._id)
-        const userAbout = await currentUser.aboutMe
 
-        res.render("/library",{ artworks, userAbout })
+        res.redirect("/profile/")
 
     } catch(error) {
         console.log(error)
@@ -127,23 +108,4 @@ router.post('/', async (req, res) => {
     }
 })
 
-// router.put('/:artworkId', async (req, res) => {
-//     try {
-//         const artwork = await Artworks.findById(req.params.artworkId);
-//    
-//         currentUser.aboutMe = {
-//             name: req.body.name,
-//             contacts: req.body.contacts,
-//             website: req.body.website,
-//             mainMedium: req.body.mainMedium,
-//         }
-
-//         await currentUser.save()
-        
-//         res.redirect(`/profile/`)
-//     } catch(error) {
-//         console.log(error);
-//         res.redirect("/")
-//     }
-// })
 module.exports = router
