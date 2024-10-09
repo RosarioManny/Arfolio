@@ -34,6 +34,7 @@ app.use(
         saveUninitialized: true,
     })
 );
+// ALLOWS USER TO SEE ART W/O SIGN-IN
 app.use(passUserToView);
 
 app.get('/', async (req, res) => { // HOME PAGE 

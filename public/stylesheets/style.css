@@ -1,0 +1,76 @@
+/* Color Palette 
+Background = #F0F8FF - White
+Button Border = #A9B3CE - Light Grey
+Important = #D64045 - Red
+Notice Me = #318EFF - Blue
+Default Font = #1B2021 - Black
+*/
+
+html {
+    height: 100vw; 
+}
+body {
+    width: auto;
+    height: auto;
+}
+#Artfolio-sign {
+    font-size: 2.6rem;
+}
+h2 {
+    font-size: 2.6rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 20em;
+    height: 50%;
+    /* background-color: #f6e7e7; */
+    padding: 1.5rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: #1B2021;
+    font-weight: bold;
+    background: #F0F8FF;
+    
+}
+label {
+    margin: .5rem;
+}
+input {
+    padding: .5rem;
+    border-radius: 1rem;
+    font-size: 1.25rem;
+}
+
+button {
+    font-size: 1.3rem;
+    margin: .2rem auto;
+    padding: .3rem 1rem;
+    background: rgba(49, 142, 255, .3);
+    border-radius: 1rem;
+    border: 2px solid #A9B3CE ;
+    color: #1B2021 ;
+}
+
+.sign-inputs {
+    display: flex;
+    flex-direction: column;
+    padding: .2rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    /* background: green; */
+}
+
+.signin-container,
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+  /* background-color: rgba(49, 142, 255, .8); */
+  border-radius: 4rem;
+}
