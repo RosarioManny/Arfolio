@@ -49,6 +49,26 @@ router.get('/:profileId/edit', async (req, res) => {
     res.redirect('/')
 }
 })
+
+router.post('/', async (req, res) => {
+    try {
+        const artData = {
+            ...req.body,
+            owner: req.session.user._id,
+        }
+        const artwork = new Artworks(artData);
+        await artwork.save()
+        const artworks = await Artworks.find( {owner: req.session.user._id});
+        const currentUser = await User.findById(req.session.user._id)
+        const userAbout = await currentUser.aboutMe
+
+        res.render("/library",{ artworks, userAbout })
+
+    } catch(error) {
+        console.log(error)
+        res.redirect('/')
+    }
+})
 // router.get('/edit', async (req, res) => {
 //     res.render('profile/edit.ejs')
 // });

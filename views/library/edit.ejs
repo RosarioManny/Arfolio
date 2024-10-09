@@ -10,9 +10,9 @@
     <h1>Edit Artworks</h1>
     <form action="/library/<%= artwork._id %>?_method=PUT" method="POST">
         <div>
-            <label for="artwork">Artwork: </label>
+            <label for="artwork">Artwork Link: </label>
             <input 
-            type="file" 
+            type="text" 
             name="artwork" 
             id="artwork" 
             accept="image/*"
@@ -57,6 +57,13 @@
             id="genre"
             value="<%= artwork.genre %>"
             >
+            <label for="description">Description: </label>
+            <textarea 
+            type="text" 
+            name="description" 
+            id="description"
+            value="<%= artwork.description %>"
+            ></textarea>
         </div>
         <button type="submit">Edit Artwork</button>
     </form>
