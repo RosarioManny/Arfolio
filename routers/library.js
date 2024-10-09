@@ -28,12 +28,8 @@ router.get('/new', async (req, res) => {
 router.get("/:artworkId", async (req, res) => { 
     try{
         const artwork = await Artworks.findById(req.params.artworkId)
-        if (artwork.owner.toString() === req.session.user._id) {
-            res.render("library/show.ejs", { artwork })
-        } else {
-            res.send("/")
-        } 
-
+        const currentUser = await User.findById(req.session.user._id)
+            res.render("library/show.ejs", { artwork, currentUser})
     } catch (error) {
         console.log(error);
         res.redirect('/')

@@ -5,7 +5,7 @@ Important = #D64045 - Red
 Notice Me = #318EFF - Blue
 Default Font = #1B2021 - Black
 */
-
+/* MAIN HOME PAGE */
 #home-container {
     height: 100%;
     background-color: #F0F8FF ;
@@ -36,4 +36,12 @@ img {
     display: flex;
     justify-content: space-between;
     color: red;
+}
+
+/* PROFILE PAGE */
+
+.aboutUser {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-evenly;
 }

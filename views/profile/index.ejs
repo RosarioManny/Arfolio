@@ -3,43 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/show.css" />
     <title></title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <hr>
-    <h1>
-        <% if (!userAbout) {%>
-        Your <em>Folio</em>, <%= user.username %> 
-    </h1>
-        <% } else {%>
-            <h1> 
-                Your <em>Folio</em>, <%= userAbout.name %>    
-            </h1>
-            <p>
-                <%= userAbout.contacts%>
-            </p>
-            <p>
-                <%= userAbout.website%>
-            </p>
-            <p>
-                <%= userAbout.mainMedium%>
-            </p>
-            <p>
-                <%= userAbout.bio%>
-            </p>
-        <% } %>
-
-    <a href="/profile/<%= user._id%>/edit">Edit Profile</a>
+    <div id="userHeader">
+        <h1>
+            <% if (!userAbout) {%>
+            Your <em>Folio</em>, <%= user.username %> 
+        </h1>
+            <% } else {%>
+                <h1> 
+                    Your <em>Folio</em>, <%= userAbout.name %>    
+                </h1>
+            <div class="aboutUser">
+                    <p>
+                        Contacts: <%= userAbout.contacts%>
+                    </p>
+                    <p>
+                        Website: 
+                        <a href="<%= userAbout.website %>">
+                            <%= userAbout.website%>
+                        </a>
+                    </p>
+                    <p>
+                        Main Medium: <%= userAbout.mainMedium%>
+                    </p>
+                    <p>
+                        Bio: <%= userAbout.bio%>
+                    </p>
+                <% } %>
+            </div>
+    </div>
+    <a id="editProfile" class="handleButtons" href="/profile/<%= user._id%>/edit">Edit Profile</a>
     <hr />
     <h1>Your Library</h1>
-    <a href="/library/new">Add Works</a>
-    <% if (artworks.length) { %>
-        <% artworks.forEach((artwork) => { %>
-                <a href="/library/<%= artwork._id %>">
-                    <p> <img src="<%= artwork.artwork %>"> || Title: <%= artwork.title %></p>
-                </a>
-        <% }) %>
-    <% } %>
+    <a id="addWorks" class="handleButtons" href="/library/new">Add Works</a>
+    <div id="display-container">
+        <% if (artworks.length) { %>
+            <% artworks.forEach((artwork) => { %>
+                    <a href="/library/<%= artwork._id %>">
+                        <p> <img src="<%= artwork.artwork %>"> || Title: <%= artwork.title %></p>
+                    </a>
+            <% }) %>
+        <% } %>
+    </div>
 </body>
 </html>

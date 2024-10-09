@@ -15,11 +15,16 @@
     <p>Date: <%= artwork.date %></p>
     <p>Medium: <%= artwork.medium %></p>
     <p>Description: <%= artwork.description %></p>
-    <a href="/library/<%= artwork._id%>/edit">
-        <button>Edit</button>
-    </a>
-    <form action="/library/<%= artwork._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete</button>
-    </form>
+    
+    <% if (currentUser._id.toString() === artwork.owner.toString()) {  %>
+        <a href="/library/<%= artwork._id%>/edit">
+            <button>Edit</button>
+        </a>
+        <form action="/library/<%= artwork._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+        </form>
+    <% } else { %>
+        Artist: <%= user.username %>
+    <%} %>
 </body>
 </html>
