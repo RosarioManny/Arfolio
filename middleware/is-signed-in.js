@@ -3,4 +3,4 @@ const isSignedIn = (req, res, next) => {
     res.redirect("/auth/sign-in")
 }
 
-module.exprorts = isSignedIn;
+module.exports = isSignedIn;

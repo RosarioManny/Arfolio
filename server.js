@@ -9,8 +9,9 @@ const session = require("express-session");
 const path = require('path');
 
 const passUserToView = require("./middleware/pass-user-to-view.js");
-const isSignedIn = require('./middleware/is-signed-in.js');
+const isSignedIn = require("./middleware/is-signed-in.js");
 
+const Artworks = require("./models/artworks.js")
 const authRoutes = require('./routers/auth/auth.js')
 const profileRoutes = require('./routers/profile.js')
 const libraryRoutes = require('./routers/library.js')
@@ -35,12 +36,13 @@ app.use(
 );
 app.use(passUserToView);
 
-app.get('/', (req, res) => { // HOME PAGE 
-    res.render("index.ejs")
+app.get('/', async (req, res) => { // HOME PAGE 
+    const artworks = await Artworks.find({})
+    res.render("index.ejs", {artworks})
 });
 
 app.use('/auth', authRoutes)
-// app.use(isSignedIn)
+app.use(isSignedIn)
 
 app.use('/profile', profileRoutes) // PROFILE ROUTES
 app.use('/library', libraryRoutes) // ARTWORK CRUD ROUTES

@@ -9,6 +9,14 @@
     <%- include('./partials/_navbar.ejs') %>
     <h1>Artfolio</h1>
     <p>The artists only portfolio</p>
-    
+
+    <div class="art-container">
+        <% artworks.forEach((artwork) => { %>
+            <div class="home-artwork">
+                <img src="<%= artwork.artwork %>">
+                <p><%= artwork.title%> </p>
+            </div>
+        <% }) %>
+    </div>
 </body>
 </html>
