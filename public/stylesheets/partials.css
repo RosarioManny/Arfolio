@@ -1,4 +1,42 @@
-#navbar {
+nav {
     display: flex;
-    background: pink;
+    flex-direction: row;
+    max-width: 100vw;
+    padding: .1rem .3rem;
+    justify-content: space-between;
+    align-items: center;
+    /* background: rgba(237, 253, 255, 1); */
 }
+
+/* #logo {
+    float: left;
+    object-fit: fill;
+    width: 100px;
+    height: 100px
+} */
+
+#artfolio-nav {
+    color: rgba(27, 32, 33, 1);
+    font-size: 2rem;
+}
+
+.authlink:hover{
+    background: rgba(100, 224, 255, 1);
+    color: darkblue;
+}
+
+.authlink {
+    text-decoration: none;
+    padding: 1rem;
+    margin: 0 15px;
+    color: cornflowerblue;
+    font-weight: bold;
+    background: rgba(0, 159, 255, 0.15);
+    border-radius: .2rem;
+}
+
+.nav-links {
+    color: red;
+    gap: 1rem;
+}
+

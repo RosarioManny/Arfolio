@@ -1,13 +1,21 @@
 <link rel="stylesheet" href="/stylesheets/partials.css" />
 <nav id="navbar">
+    <!-- <img id="logo"src="Image/openart-image_45DjVxQ__1728490553863_raw.jpg" alt="Artfolio Logo">  -->
+    <h1 id="artfolio-nav">Artfolio</h1>
     <% if (user) { %>
-        <a id="logo">Artfolio</a>
-
-        <a href="/">Home </a>
-        <a href="/profile">Profile </a>
-        <a href="/auth/sign-out"> Sign Out </a>
+        <div class="nav-links">
+            <a href="/">Home </a>
+            <a href="/profile">Profile </a>
+            <a href="/auth/sign-out"> Sign Out </a>
+        </div>
     <% } else { %>
-        <a href="/auth/sign-in"> Sign In </a>
-        <a href="/auth/sign-up"> Sign Up </a>
+        <div class="nav-links">
+            <a id="signInLink" class="authlink" href="/auth/sign-in"> 
+                Sign In 
+            </a>
+            <a id="signUpLink" class="authlink" href="/auth/sign-up"> 
+                Sign Up 
+            </a>
+        </div>
     <% } %>
 </nav>
