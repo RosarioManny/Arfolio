@@ -19,7 +19,6 @@ router.get('/', async (req, res) => {
 router.put('/', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);
-        console.log(currentUser);
         currentUser.aboutMe = {
             name: req.body.name,
             contacts: req.body.contacts,
@@ -49,52 +48,5 @@ router.get('/:profileId/edit', async (req, res) => {
     res.redirect('/')
 }
 })
-
-router.post('/', async (req, res) => {
-    try {
-        const artData = {
-            ...req.body,
-            owner: req.session.user._id,
-        }
-        const artwork = new Artworks(artData);
-        await artwork.save()
-        const artworks = await Artworks.find( {owner: req.session.user._id});
-        const currentUser = await User.findById(req.session.user._id)
-        const userAbout = await currentUser.aboutMe
-
-        res.render("/library",{ artworks, userAbout })
-
-    } catch(error) {
-        console.log(error)
-        res.redirect('/')
-    }
-})
-// router.get('/edit', async (req, res) => {
-//     res.render('profile/edit.ejs')
-// });
-
-// router.post('/', async (req, res) => {
-//     try {
-//         const currentUser = await User.findById(req.session.user._id);
-//     } catch(error) {
-//         console.log(error);
-//         res.redirect('/')
-//     }
-// });
-
-// router.get("/:profileId", async (req, res) => {
-//     try {
-//         const currentUser = await User.findById(req.params.profileId)
-//         if (currentUser.owner.toString() == req.session.user._id) {
-//             await currentUser.findByIdAndUpdate(req.params.profileId, req.body)
-//             res.redirect(`/profile/${req.params.profileId}`)
-//         } else {
-//             res.redirect('/')
-//         }
-//     } catch(error) {
-//         console.log(error);
-//         res.redirect('/')
-//     }
-// })
 
 module.exports = router;
