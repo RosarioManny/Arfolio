@@ -3,28 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/show.css" />
     <title><%= artwork.title %></title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1><%= artwork.title%> </h1>
-    <img src="<%= artwork.artwork %>">
-    
-    <p>Genre: <%= artwork.genre %></p>
-    <p>Size: <%= artwork.size %></p>
-    <p>Date: <%= artwork.date %></p>
-    <p>Medium: <%= artwork.medium %></p>
-    <p>Description: <%= artwork.description %></p>
-    
-    <% if (currentUser._id.toString() === artwork.owner.toString()) {  %>
-        <a href="/library/<%= artwork._id%>/edit">
-            <button>Edit</button>
-        </a>
-        <form action="/library/<%= artwork._id %>?_method=DELETE" method="POST">
-            <button type="submit">Delete</button>
-        </form>
-    <% } else { %>
-        Artist: <%= user.username %>
-    <%} %>
+    <div id="artInfo">
+        <img id="shownArt"src="<%= artwork.artwork %>">
+        <% if (currentUser._id.toString() === artwork.owner.toString()) {  %>
+            
+            <div class="handleButtons">
+                <a href="/library/<%= artwork._id%>/edit">
+                    <button>Edit</button>
+                </a>
+            </div>
+
+            <div id="deleteButton"class="handleButtons">
+                <form action="/library/<%= artwork._id %>?_method=DELETE" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        <% } else { %>
+            Artist: <%= user.username %>
+        <%} %>
+        <div id="artDetails">
+                <p id="genre" class="artwork-details">Genre: <%= artwork.genre %></p>
+                <p id="size" class="artwork-details">Size: <%= artwork.size %></p>
+                <p id="date" class="artwork-details">Date: <%= artwork.date %></p>
+                <p id="medium" class="artwork-details">Medium: <%= artwork.medium %></p>
+                <p id="description" class="artwork-details">Description: <%= artwork.description %></p>
+                
+        </div>
+    </div>
 </body>
 </html>

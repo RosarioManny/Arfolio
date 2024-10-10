@@ -10,30 +10,33 @@
     <%- include('../partials/_navbar.ejs') %>
     <hr>
     <div id="userHeader">
-        <h1>
+       
             <% if (!userAbout) {%>
+        <h1 class="Folio">
             Your <em>Folio</em>, <%= user.username %> 
         </h1>
             <% } else {%>
-                <h1> 
+                <h1 class="Folio"> 
                     Your <em>Folio</em>, <%= userAbout.name %>    
                 </h1>
             <div class="aboutUser">
-                    <p>
+                    <p id="contacts" class="about">
                         Contacts: <%= userAbout.contacts%>
                     </p>
-                    <p>
+                    <p id="website" class="about">
                         Website: 
                         <a href="<%= userAbout.website %>">
                             <%= userAbout.website%>
                         </a>
                     </p>
-                    <p>
+                    <p id="mainMedium" class="about">
                         Main Medium: <%= userAbout.mainMedium%>
                     </p>
-                    <p>
-                        Bio: <%= userAbout.bio%>
-                    </p>
+                    <div class="bio-container">
+                        <p id="bio" class="about">
+                            Bio: <%= userAbout.bio%>
+                        </p>
+                    </div>
                 <% } %>
             </div>
     </div>

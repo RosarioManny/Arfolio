@@ -5,6 +5,15 @@ Important = #D64045 - Red
 Notice Me = #318EFF - Blue
 Default Font = #1B2021 - Black
 */
+
+html {
+    height: 100%;
+}
+
+h1 {
+    color: #1B2021;
+    font-size: 1.5rem;
+}
 /* MAIN HOME PAGE */
 #home-container {
     height: 100%;
@@ -26,22 +35,81 @@ Default Font = #1B2021 - Black
     height: 25%;
     object-fit: contain;
 }
+.artimage{
+    display: flex;
+    flex-flow: column;
+}
 
 img {
-    width: 500px;
-    height: 500px;
+    background-color: #1B2021;
+    width: 23vw;
+    height: 23vw;
+    border-radius: 1rem;
+    object-fit: contain;
 }
+
 
 #art-details {
     display: flex;
     justify-content: space-between;
-    color: red;
+    justify-items: center;
+    color: #1B2021;
+    text-decoration: none;
+    margin: 0 auto;
 }
+
 
 /* PROFILE PAGE */
 
+#Folio {
+    position: fixed;
+}
+
 .aboutUser {
     display: flex;
+    flex-flow: wrap;    
+    justify-content: center;    
+    gap: 1vw;
+}
+
+.about {
+    font-size: 1rem;
+}
+
+.bio-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#bio {
+    border: 1px solid #1B2021;
+    max-width: 30vw;
+    max-height: auto;
+}
+
+#userHeader {
+    display: flex;
     flex-flow: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
+}
+
+
+/* SHOW PAGE */
+
+#artInfo {
+    display: flex;
+}
+
+#artDetails {
+    display: flex;
+    flex-flow: column;
+}
+
+#shownArt {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    max-height: 50vw;
+    width: auto;
+    min-width: 20vw;
 }

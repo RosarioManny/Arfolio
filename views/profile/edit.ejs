@@ -3,25 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/show.css" />
+    <title>Editing About me</title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <hr>
-    <h1>Editting your About me...</h1>
+    <h1 id="editingheader">Editting <em>Your</em> About me...</h1>
     <div>
         <form action="/profile?_method=PUT"  method="POST">
-            <div>
+            <div id="editcontainer">
                 <label for="name">Name: </label>
                 <input 
                 type="text" 
                 name="name" 
                 id="name"
-                value="<% if (!userAbout) {%>
-                    <%= "" %>
+                class="edit-abouts"
+                <% if (!userAbout) {%>
+                    value="<%= '' %>"
                 <% } else {%>
-                        <%= userAbout.name %>    
-                <% } %>"
+                    value="<%= userAbout.name %>"  
+                <% } %>
                 >
     
                 <label for="mainMedium">Main Medium: </label>
@@ -29,11 +31,12 @@
                 type="text" 
                 name="mainMedium" 
                 id="mainMedium"
-                value="<% if (!userAbout) {%>
-                    <%= "" %>
+                class="edit-abouts"
+                <% if (!userAbout) {%>
+                    value="<%= '' %>"
                 <% } else {%>
-                        <%= userAbout.mainMedium %>    
-                <% } %>"
+                    value="<%= userAbout.mainMedium %>"    
+                <% } %>
                 >
         
                 <label for="contacts">Contacts: </label>
@@ -41,11 +44,12 @@
                 type="text" 
                 name="contacts" 
                 id="contacts" 
-                value="<% if (!userAbout) {%>
-                    <%= "" %>
+                class="edit-abouts"
+                <% if (!userAbout) {%>
+                    value="<%= '' %>"
                 <% } else {%>
-                        <%= userAbout.contacts %>    
-                <% } %>"
+                    value="<%= userAbout.contacts %>"    
+                <% } %>
                 >
         
                 <label for="website">Website: </label>
@@ -53,11 +57,12 @@
                 type="text" 
                 name="website" 
                 id="website"
-                value="<% if (!userAbout) {%>
-                    <%= "" %>
+                class="edit-abouts"
+                <% if (!userAbout) {%>
+                value= "<%= '' %>"    
                 <% } else {%>
-                        <%= userAbout.website %>    
-                <% } %>"
+                    value="<%= userAbout.website %>"    
+                <% } %>
                 >
                 
                 <label for="bio">Biography: </label>
@@ -65,17 +70,18 @@
                 type="text" 
                 name="bio" 
                 id="bio"
+                class="edit-abouts"
                 row="50"
                 cols="50"
-                value="<% if (!userAbout) {%>
-                    <%= %>
+                <% if (!userAbout) {%>
+                    value="<%= '' %>"
                 <% } else {%>
-                        <%= userAbout.bio %>    
-                <% } %>"
+                    value="<%= userAbout.bio %>"    
+                <% } %>
                 ></textarea>
-            <button type="submit">Submit</button>
+                <button id="submitbtn"type="submit">Submit</button>
+            </div>
         </form>
-        
     </div>
 </body>
 </html>
