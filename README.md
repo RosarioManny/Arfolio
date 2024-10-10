@@ -20,7 +20,7 @@ AAU I want to be able to click the works and view its information. If I am the o
 ## MVP
 
 1. Users should have a profile account in which they can show others their artworks.
-   1. They should be able to edit an About Me to help network and share their works. The About Me should show their contacts, website, biography and real name.
+
 1. Users Profile will show a list of their artworks.
    1. Users can click any artwork to view its information (title, date, description, size, medium and genre).
    1. Within the artworks Show page, they will display an edit and delete button if they are the user
@@ -29,6 +29,11 @@ AAU I want to be able to click the works and view its information. If I am the o
 
 ## CONCEPTS
 
-![ERD and Concetps](Image/Art Portfolio.png)
+![ERD and Concetps](https://www.figma.com/design/QddWc20DV1g77hgBtQBXsr/Art-Portfolio?node-id=0-1&t=WBeb5FXhKG96RCGD-1)
 
 ## STRETCH GOALS
+
+1. A way to look up certain works via their Genre
+1. Add comments to the works.
+1. Ability to upload multiple images to one artwork (3D, Sculpture, and alternative reasons).
+1. About Me to help network and share their works. The About Me should show their contacts, website, biography and real name.
