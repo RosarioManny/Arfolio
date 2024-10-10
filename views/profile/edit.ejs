@@ -10,7 +10,7 @@
     <%- include('../partials/_navbar.ejs') %>
     <hr>
     <h1 class="titleCard">Editting <em>Your</em> About me...</h1>
-    <div>
+    <div id="newForm">
         <form action="/profile?_method=PUT"  method="POST">
             <div id="formcontainer">
                 <label for="name">Name: </label>
@@ -80,7 +80,9 @@
                 <% } %>
                 ></textarea>
             </div>
-            <button id="submitbtn"type="submit">Save Changes</button>
+            <div id="submitbtn">
+                <button "type="submit">Save Changes</button>
+            </div>
         </form>
     </div>
 </body>

@@ -8,6 +8,7 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
+    <hr>
     <h1 class="titleCard">Edit Artworks</h1>
     <form action="/library/<%= artwork._id %>?_method=PUT" method="POST">
         <div id="formcontainer">

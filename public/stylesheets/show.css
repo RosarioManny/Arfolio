@@ -1,7 +1,7 @@
 /* Color Palette 
 Background = #F0F8FF - White
 Button Border = #A9B3CE - Light Grey
-Important = #D64045 - Red
+Important = #FF585E - Red
 Notice Me = #318EFF - Blue
 Default Font = #1B2021 - Black
 */
@@ -56,7 +56,6 @@ img {
     border-radius: 1rem;
     object-fit: contain;
 }
-
 
 /* PROFILE PAGE */
 
@@ -122,14 +121,60 @@ img {
 
 #submitbtn {
     text-align: end;
-    margin: .2rem
+    margin: .2rem   
 }
 
 /* NEW ART PAGE */
 
+#artDetails {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    padding: .6rem;
+    height: 100%
+
+}
+#artInfo {
+    display: flex;
+    justify-content: space-around;
+}
 #newForm {
     display: flex;
     justify-content: center;
-    color: red;
+}
+
+#deleteArt {
+    border: 1.5px solid #1B2021;
+    color: #F0F8FF;
+    background: #FF585E;
+}
+
+#deleteArt:hover {
+    border: 1.5px solid #318EFF;
+    color: azure;
+    background: #FF3227;
+}
+
+.handleButtons {
+    display: flex;
+    justify-content: flex-end;  
+}
+
+#arthandler {
+    display: flex;
+    flex-flow: column;
+    margin: 1rem ;
+    padding: 10px;
+    width: 40vw;
+    height: 50vw;
+    background: #A9B3CE;
+    border-radius: 1rem;
+}
+
+#shownArt {
+    border-radius: 1rem;
+    margin: auto;
+    height: fit-content;
+
 }
 
