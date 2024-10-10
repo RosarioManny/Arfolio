@@ -1,7 +1,8 @@
-# PROJECT DETAILS
+# ARTFOLIO
 
 - Name: Artfolio
-- Languages: HTML, CSS, EJS and JS
+- Applications: Mongo, Node, Express
+- Languages: HTML, CSS, EJS, and JS
 
 ## USER STORIES
 
@@ -47,3 +48,8 @@ The User is the main Schema that has a relation to the about Schema and the Artw
 ## MVP Product
 
 **Link to Website** https://artfolio-6f7be019a918.herokuapp.com/
+
+## Sources
+
+- Pinterest (Images)
+- Figma (Conceptualize)
