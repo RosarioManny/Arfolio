@@ -44,6 +44,7 @@ The User is the main Schema that has a relation to the about Schema and the Artw
 1. Add comments to the works.
 1. Ability to upload multiple images to one artwork (3D, Sculpture, and alternative reasons).
 1. About Me to help network and share their works. The About Me should show their contacts, website, biography and real name.
+1. Ability to Archive works.
 
 ## MVP Product
 
