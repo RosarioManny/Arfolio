@@ -29,13 +29,13 @@ AAU I want to be able to click the works and view its information. If I am the o
 
 ## ERD
 
-![ERD](https://www.figma.com/board/VD8UnsqF3A72BWvQBaF2mz/ERD---ArtPortfolio-Site?node-id=0-1&t=eAYJikk5nnwIguk8-1)
+![ERD](/Image/ERD.png)
 
 The User is the main Schema that has a relation to the about Schema and the Artworks schema.
 
 ## CONCEPT
 
-![CONCEPT OF WEBSITE LAYOUT](Image/Art Portfolio (1).png)
+![CONCEPT OF WEBSITE LAYOUT](/Image/Art Portfolio (1).png)
 
 ## STRETCH GOALS
 
