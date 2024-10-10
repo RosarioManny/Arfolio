@@ -23,18 +23,18 @@ nav {
 
 .homelink {
     text-decoration: none;
-    padding: .8rem;
+    padding: .6rem;
     margin: 0 15px;
-    color: #1B2021;
+    color: #F0F8FF;
     font-weight: bold;
-    background: rgba(49, 142, 255, 0.15);
-    border-radius: .3rem;
-    border: 1px solid rgba(27, 32, 33, .4);
+    background: #1B2021;
+    border-radius: .4rem;
+    border: 1.5px solid #A9B3CE;
 }
 
 .homelink:hover{
-    background: rgba(100, 224, 255, .4);
-    color: darkblue;
+    background: #318EFF;
+    color: #F0F8FF;
 }
 
 .authlink:hover{

@@ -66,20 +66,20 @@
                 >
                 
                 <label for="bio">Biography: </label>
-                <textarea 
+                <input 
                 type="text" 
                 name="bio" 
                 id="bio"
                 class="edit-abouts"
-                row="50"
-                cols="50"
+                size="280"
+                placeholder="280 Character Limit"
                 <% if (!userAbout) {%>
                     value="<%= '' %>"
                 <% } else {%>
-                    value="<%= userAbout.bio %>"    
+                    value="<%= userAbout.bio %>"   
                 <% } %>
                 ></textarea>
-                <button id="submitbtn"type="submit">Submit</button>
+                <button id="submitbtn"type="submit">Save Changes</button>
             </div>
         </form>
     </div>

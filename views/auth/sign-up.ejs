@@ -10,7 +10,8 @@
     <h1 id="Artfolio-sign">Artfolio</h1>
     
 <div class="div-container">
-    <h2>Sign Up: Create Your Artfolio Account!</h2>
+    <h2>Sign Up</h2>
+    <h3>Create Your Artfolio Account!</h3>
     <form action="/auth/sign-up" method="POST">
         <p class="sign-inputs">
             <label for="username">Username: </label>
@@ -23,6 +24,12 @@
         <p class="sign-inputs">
             <label for="confirmPassword">Confirm Password: </label>
             <input type="password" name="confirmPassword" id="confirmPassword">
+        </p>
+        <p>
+            Already a member? 
+            <a href="/auth/sign-in">
+                Sign In
+            </a>
         </p>
         <button type="submit">Sign Up</button>
     </form>
