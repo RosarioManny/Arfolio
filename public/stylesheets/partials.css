@@ -42,6 +42,12 @@ nav {
     border: 1.5px solid #A9B3CE;
 }
 
+.homelink:hover {
+    background: #318EFF;
+    color: #1B2021;
+    border: 1.5px solid #1B2021;
+}
+
 #signInLink {
     color: #1B2021;
     background-color: #A9B3CE;
@@ -64,9 +70,15 @@ nav {
     color: #1B2021;
     border: 1.5px solid #1B2021;
 }
+
+
 #signInLink:hover {
     color: #1B2021;
     background-color: #F0FFFF;
     border: 2px solid #1B2021;
 }
 
+#signoutlink:hover {
+    color:#F0F8FF;
+    background: #D64045;
+}

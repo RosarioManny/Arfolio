@@ -137,3 +137,8 @@ img {
     justify-content: center;
     align-items: center;
 }
+
+#submitbtn:hover {
+    color: #F0F8FF;
+    background: #318EFF;
+}

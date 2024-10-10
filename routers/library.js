@@ -26,16 +26,11 @@ router.get('/new', async (req, res) => {
 
 // GET - SHOW PAGE
 router.get("/:artworkId", async (req, res) => { 
-    // console.log('berfore the tryyyy yturyvuyifgvbiutgbnitubgni ugbhniuogbhnioughnouhi nouhn', req.params)
-
     try{
-        console.log('why do i appear twotimes????????????????????????????????????,', req.params)
+
         const artwork = await Artworks.findById(req.params.artworkId)
         const currentUser = await User.findById(req.session.user._id)
-        // console.log(artwork, 'dcfvgbiuvfyucdtxrszaxrydcufvigbohigfudctysxtzrydctufvyigbuohivfyucdtxysrtzydctufvyigubivfyucdtyxtcuyviubgovicyudxtysrtzxsydtcufyvigubfcyudtxysrtzxydtcufyvigbvfycudtxysrtzydcufvigboivycutyxrtcdufvigb')
-        // console.log(currentUser,'tdcfvgifucydxtzsxrdycfuvgibhobguvfycdtxsrzasxdycfuvgibvfcydtxsrzasxdycfuvgb')
             res.render("library/show.ejs", { artwork, currentUser})
-            // res.send('hello')
     } catch (error) {
         console.log(error);
         res.redirect('/')
