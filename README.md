@@ -40,4 +40,4 @@ AAU I want to be able to click the works and view its information. If I am the o
 
 ## MVP Product
 
-![Link to Website] https://artfolio-6f7be019a918.herokuapp.com/
+**Link to Website** https://artfolio-6f7be019a918.herokuapp.com/
