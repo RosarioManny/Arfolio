@@ -1,7 +1,7 @@
 # PROJECT DETAILS
 
-Name: Artfolio
-Languages: HTML, CSS, EJS and JS
+- Name: Artfolio
+- Languages: HTML, CSS, EJS and JS
 
 ## USER STORIES
 
