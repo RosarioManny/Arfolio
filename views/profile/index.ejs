@@ -38,24 +38,27 @@
                         </p>
                     </div>
                 <% } %>
+                <a id="editProfile" class="profileButtons" href="/profile/<%= user._id%>/edit">Edit Profile</a>
             </div>
     </div>
-    <a id="editProfile" class="profileButtons" href="/profile/<%= user._id%>/edit">Edit Profile</a>
+   
     <Article id="home-container">
         <hr />
-        <h1>Your Library</h1>
-        <a id="addWorks" class="profileButtons" href="/library/new">Add Works</a>
+        <div id="libraryBar">
+            <h1>
+                Your Library
+            </h1>
+            <a id="addWorks" class="profileButtons" href="/library/new">Add Works</a>
+        </div>
         <div id="display-container">
             <% if (artworks.length) { %>
                 <% artworks.forEach((artwork) => { %>
                     <div class="home-artwork">
                         <a class="artimage" href="/library/<%= artwork._id %>">
-                            <p> 
                                 <img src="<%= artwork.artwork %>">
-                                <div>
-                                    Title: <%= artwork.title %>
+                                <div id>
+                                    <p> Title: <%= artwork.title %></p>
                                 </div>   
-                            </p>
                         </a>
     
                     </div>

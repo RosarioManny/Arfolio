@@ -84,6 +84,7 @@ button {
 .artimage{
     display: flex;
     flex-flow: column;
+    margin: 1rem;    
 }
 
 img {

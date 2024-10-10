@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router(); 
 const bcrypt = require('bcrypt'); 
 
-const User = require('/Users/emmanuelr/seb/projects/Back-End-Project/models/user.js');
+const User = require('../../models/user.js');
 
 router.get('/sign-in', (req, res) => { // Sign-in route
     res.render('auth/sign-in.ejs')
