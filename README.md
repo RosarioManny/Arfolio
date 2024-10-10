@@ -29,7 +29,7 @@ AAU I want to be able to click the works and view its information. If I am the o
 
 ## CONCEPTS
 
-![ERD and Concetps](https://www.figma.com/design/QddWc20DV1g77hgBtQBXsr/Art-Portfolio?node-id=0-1&t=WBeb5FXhKG96RCGD-1)
+![ERD and Concetps](/Image/Art%20Portfolio.png)
 
 ## STRETCH GOALS
 
