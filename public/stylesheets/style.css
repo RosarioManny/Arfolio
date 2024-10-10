@@ -5,7 +5,7 @@ Important = #D64045 - Red
 Notice Me = #318EFF - Blue
 Default Font = #1B2021 - Black
 */
-
+/* Global */
 html {
     height: 100vw; 
 }
@@ -20,6 +20,7 @@ hr {
 
 h2 {
     font-size: 2.6rem;
+    margin: 1rem;
 }
 
 form {
@@ -59,6 +60,7 @@ button {
 /* MAIN HOME PAGE */
 #Artfolio-sign {
     font-size: 2.6rem;
+    margin: 1rem
 }
 
 #home-container {
@@ -75,16 +77,17 @@ button {
     /* gap: auto; */
 }
 .home-artwork {
-    display: flex;
-    flex-flow: column;
+    /* display: flex;
+    flex-flow: column; */
     width: 25%;
-    height: 25%;
+    height: fit-content;
     object-fit: contain;
 }
 .artimage{
     display: flex;
     flex-flow: column;
-    margin: 1rem;    
+    margin: 1rem;   
+    text-decoration: none; 
 }
 
 img {

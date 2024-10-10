@@ -61,12 +61,10 @@ router.get("/:artworkId/edit", async (req, res) => {
 router.delete("/:artworkId", async (req, res) => { 
     try {
         const artwork = await Artworks.findById(req.params.artworkId);
-        const currentUser = await User.findById(req.session.user._id)
-        const userAbout = await currentUser.aboutMe
 
         if (artwork.owner.toString() == req.session.user._id) {
             await Artworks.findByIdAndDelete(req.params.artworkId);
-            res.redirect("/profile", { artwork, userAbout });
+            res.redirect("/profile");
         } else {
             res.redirect("/");
         } 

@@ -42,23 +42,31 @@ nav {
     border: 1.5px solid #A9B3CE;
 }
 
-.homelink:hover{
-    background: #318EFF;
-    color: #F0F8FF;
-}
-
-.authlink:hover{
-    background: rgba(100, 224, 255, .4);
-    color: darkblue;
+#signInLink {
+    color: #1B2021;
+    background-color: #A9B3CE;
+    border: 2px solid #1B2021;
 }
 
 .authlink {
     text-decoration: none;
     padding: 1rem;
     margin: 0 15px;
-    color: cornflowerblue;
+    color: azure;
     font-weight: bold;
-    background: rgba(0, 159, 255, 0.15);
+    background: #1B2021;
     border-radius: .2rem;
-    border: 1px solid rgba(27, 32, 33, .4);
+    border: 1.5px solid #A9B3CE;
 }
+
+.authlink:hover{
+    background: #318EFF;
+    color: #1B2021;
+    border: 1.5px solid #1B2021;
+}
+#signInLink:hover {
+    color: #1B2021;
+    background-color: #F0FFFF;
+    border: 2px solid #1B2021;
+}
+

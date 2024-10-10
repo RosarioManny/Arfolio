@@ -62,8 +62,8 @@ img {
 .aboutUser {
     display: flex;
     flex-flow: wrap;    
-    justify-content: flex-end;    
-    gap: 1vw;
+    justify-content: space-between;    
+    margin: 0 1rem;
 }
 
 #bio {
@@ -79,7 +79,7 @@ img {
 #display-container {
     display: flex;
     flex-wrap: wrap;
-    height: 50vw;
+    height: fit-content;
 }
 .profileButtons {
     text-decoration: none;
@@ -104,6 +104,7 @@ img {
     display: flex;
     flex-flow: wrap;
     justify-content: space-between;
+    margin: 0 1rem
 }
     
 
@@ -173,22 +174,22 @@ img {
 }
 
 #deleteArt {
-    border: 1.5px solid #1B2021;
+    border: 1.5px solid #A9B3CE;
     color: #F0F8FF;
-    background: #FF585E;
+    background: #1B2021;
     font-size: .75rem;
 }
 
-#editButton {
-    font-size: .85rem;
-    margin: .2rem;
-}
-
-
 #deleteArt:hover {
-    border: 1.5px solid #318EFF;
+    border: 1.5px solid #f6e7e7;
     color: azure;
     background: #FF3227;
+}
+
+#editButton {
+    color: azure;
+    font-size: .76rem;
+    margin: .2rem;
 }
 
 .handleButtons {

@@ -9,66 +9,69 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <hr>
-    <h1 class="titleCard">Edit Artworks</h1>
-    <form action="/library/<%= artwork._id %>?_method=PUT" method="POST">
-        <div id="formcontainer">
-            <label for="artwork">Artwork Link: </label>
-            <input 
-            type="text" 
-            name="artwork" 
-            id="artwork" 
-            accept="image/*"
-            value="<%= artwork.artwork %>"
-            >
-
-            <label for="title">Title: </label>
-            <input 
-            type="text" 
-            name="title" 
-            id="title" 
-            value="<%= artwork.title %>" 
-            >
+    <h1 class="titleCard">Edit Artwork...</h1>
+    <div id="newForm">
+        <form action="/library/<%= artwork._id %>?_method=PUT" method="POST">
+            <div id="formcontainer">
+                <label for="artwork">Artwork Link: </label>
+                <input 
+                type="text" 
+                name="artwork" 
+                id="artwork" 
+                accept="image/*"
+                value="<%= artwork.artwork %>"
+                >
     
-            <label for="medium">Medium: </label>
-            <input 
-            type="text" 
-            name="medium" 
-            id="medium" 
-            value="<%= artwork.medium %>"
-            >
-    
-            <label for="date">Date: </label>
-            <input 
-            type="date" 
-            name="date" 
-            id="date"
-            value="<%= artwork.date %>"
-            >
-    
-            <label for="size">Size: </label>
-            <input 
-            type="text" 
-            name="size" 
-            id="size"
-            value="<%= artwork.size %>"
-            >
-            <label for="genre">Genre: </label>
-            <input 
-            type="text" 
-            name="genre" 
-            id="genre"
-            value="<%= artwork.genre %>"
-            >
-            <label for="description">Description: </label>
-            <textarea 
-            type="text" 
-            name="description" 
-            id="description"
-            value="<%= artwork.description %>"
-            ></textarea>
-        </div>
-        <button type="submit">Edit Artwork</button>
-    </form>
-    
+                <label for="title">Title: </label>
+                <input 
+                type="text" 
+                name="title" 
+                id="title" 
+                value="<%= artwork.title %>" 
+                >
+        
+                <label for="medium">Medium: </label>
+                <input 
+                type="text" 
+                name="medium" 
+                id="medium" 
+                value="<%= artwork.medium %>"
+                >
+        
+                <label for="date">Date: </label>
+                <input 
+                type="date" 
+                name="date" 
+                id="date"
+                value="<%= artwork.date %>"
+                >
+        
+                <label for="size">Size: </label>
+                <input 
+                type="text" 
+                name="size" 
+                id="size"
+                value="<%= artwork.size %>"
+                >
+                <label for="genre">Genre: </label>
+                <input 
+                type="text" 
+                name="genre" 
+                id="genre"
+                value="<%= artwork.genre %>"
+                >
+                <label for="description">Description: </label>
+                <textarea 
+                type="text" 
+                name="description" 
+                id="description"
+                value="<%= artwork.description %>"
+                ></textarea>
+            </div>
+            <div  id="submitbtn">
+                <button type="submit">Edit Artwork</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
