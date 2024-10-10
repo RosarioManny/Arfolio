@@ -7,7 +7,6 @@ Default Font = #1B2021 - Black
 */
 
 /* GLOBALS */
-
 html {
     height: 100%;
 }
@@ -44,7 +43,8 @@ button {
     color: #A9B3CE ;
 }
 
-button:hover{
+button:hover {
+    border: 2px solid #F0F8FF;
     color: #F0F8FF;
     background: #318EFF;
 }
@@ -78,15 +78,6 @@ img {
 
 /* SHOW PAGE */
 
-#artInfo {
-    display: flex;
-}
-
-#artDetails {
-    display: flex;
-    flex-flow: column;
-}
-
 #shownArt {
     display: flex;
     justify-content: center;
@@ -95,7 +86,6 @@ img {
     width: auto;
     min-width: 20vw;
 }
-
 
 /* EDIT ABOUT PAGE */
 
@@ -147,7 +137,14 @@ img {
     border: 1.5px solid #1B2021;
     color: #F0F8FF;
     background: #FF585E;
+    font-size: .75rem;
 }
+
+#editButton {
+    font-size: .85rem;
+    margin: .2rem;
+}
+
 
 #deleteArt:hover {
     border: 1.5px solid #318EFF;
@@ -157,7 +154,7 @@ img {
 
 .handleButtons {
     display: flex;
-    justify-content: flex-end;  
+    justify-content: flex-end;
 }
 
 #arthandler {

@@ -9,11 +9,21 @@ Default Font = #1B2021 - Black
 nav {
     display: flex;
     flex-direction: row;
+    height: 6.5vw;
     max-width: 100vw;
     padding: .1rem .3rem;
     justify-content: space-between;
     align-items: center;
     /* background: rgba(237, 253, 255, 1); */
+}
+
+#Logo {
+    height: 4rem;
+    width: 4rem;
+    padding: .2rem;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: transparent;
 }
 
 #artfolio-nav {
