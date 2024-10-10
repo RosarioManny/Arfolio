@@ -27,9 +27,15 @@ AAU I want to be able to click the works and view its information. If I am the o
 1. Main page will display artworks from multiple Users.
 1. They will have the ability to create an account(sign-up) and sign-in.
 
-## CONCEPTS
+## ERD
 
-![ERD and Concetps](/Image/Art%20Portfolio.png)
+![ERD](https://www.figma.com/board/VD8UnsqF3A72BWvQBaF2mz/ERD---ArtPortfolio-Site?node-id=0-1&t=eAYJikk5nnwIguk8-1)
+
+The User is the main Schema that has a relation to the about Schema and the Artworks schema.
+
+## CONCEPT
+
+![CONCEPT OF WEBSITE LAYOUT](Image/Art Portfolio (1).png)
 
 ## STRETCH GOALS
 
