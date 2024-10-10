@@ -8,9 +8,9 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Edit Artworks</h1>
+    <h1 class="titleCard">Edit Artworks</h1>
     <form action="/library/<%= artwork._id %>?_method=PUT" method="POST">
-        <div>
+        <div id="formcontainer">
             <label for="artwork">Artwork Link: </label>
             <input 
             type="text" 

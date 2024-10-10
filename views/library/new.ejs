@@ -8,36 +8,43 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Add Works!</h1>
-    <form action="/library" method="POST">
-        <div>
-            <label for="artwork">Artwork Link: </label>
-            <input type="text" name="artwork" id="artwork" required>
+    <hr>
+    <h1 class="titleCard">Add Works!</h1>
+    <div id="newForm">
+        <form id="newArtForm"action="/library" method="POST">
+            <div id="formcontainer">
+                <label for="artwork">Artwork Link: </label>
+                <input type="text" class="newArtInputs" name="artwork" id="artwork" required>
+    
+                <label for="title">Title: </label>
+                <input type="text" class="newArtInputs" name="title" id="title" required>
+        
+                <label for="medium">Medium: </label>
+                <input type="text" class="newArtInputs" name="medium" id="medium" required>
+        
+                <label for="date">Date: </label>
+                <input type="date" class="newArtInputs" name="date" id="date">
+        
+                <label for="size">Size: </label>
+                <input type="text" class="newArtInputs" name="size" id="size">
+    
+                <label for="genre">Genre: </label>
+                <input type="text" class="newArtInputs" name="genre" id="genre">
 
-            <label for="title">Title: </label>
-            <input type="text" name="title" id="title" required>
-    
-            <label for="medium">Medium: </label>
-            <input type="text" name="medium" id="medium" required>
-    
-            <label for="date">Date: </label>
-            <input type="date" name="date" id="date">
-    
-            <label for="size">Size: </label>
-            <input type="text" name="size" id="size">
-
-            <label for="genre">Genre: </label>
-            <input type="text" name="genre" id="genre">
-        </div>
-        <label for="description">Description: </label>
-        <textarea 
-        name="description" 
-        id="description"
-        placeholder="Tell us about your process!"
-        cols="20"
-        rows="8"
-        ></textarea>  
-        <button type="submit">Submit</button>
-    </form>
+                <label for="description">Description: </label>
+                <input
+                type="text"  
+                name="description" 
+                id="description"
+                placeholder="Tell us about your process!"
+                cols="20"
+                rows="8"
+                >
+            </div>
+            <div  id="submitbtn">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

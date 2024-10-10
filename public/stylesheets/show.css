@@ -19,7 +19,7 @@ h1 {
 
 form {
     display: flex;
-    justify-content: center;
+    flex-flow: column;
 }
 
 label {
@@ -49,32 +49,6 @@ button:hover{
     background: #318EFF;
 }
 
-/* MAIN HOME PAGE */
-#home-container {
-    height: 100%;
-    background-color: #F0F8FF ;
-}
-
-.art-container {
-    display: flex;
-    flex-flow: wrap;
-    justify-content: space-evenly;
-    justify-items: flex-start;
-    /* background-color: wheat; */
-    /* gap: auto; */
-}
-.home-artwork {
-    display: flex;
-    flex-flow: column;
-    width: 25%;
-    height: 25%;
-    object-fit: contain;
-}
-.artimage{
-    display: flex;
-    flex-flow: column;
-}
-
 img {
     background-color: #1B2021;
     width: 23vw;
@@ -84,21 +58,7 @@ img {
 }
 
 
-#art-details {
-    display: flex;
-    justify-content: space-between;
-    justify-items: center;
-    color: #1B2021;
-    text-decoration: none;
-    margin: 0 auto;
-}
-
-
 /* PROFILE PAGE */
-
-#Folio {
-    position: fixed;
-}
 
 .aboutUser {
     display: flex;
@@ -107,27 +67,15 @@ img {
     gap: 1vw;
 }
 
-.about {
-    font-size: 1rem;
-}
-
-.bio-container {
-    display: flex;
-    justify-content: flex-end;
-}
-
 #bio {
-    border: 1px solid #1B2021;
-    max-width: 30vw;
+    max-width: 35vw;
     max-height: auto;
 }
 
 #userHeader {
-    display: flex;
-    flex-flow: wrap;
-    justify-content: space-between;
+    max-width: 100%;
+    max-height: 10vw;
 }
-
 
 /* SHOW PAGE */
 
@@ -152,14 +100,14 @@ img {
 
 /* EDIT ABOUT PAGE */
 
-#editcontainer {
+#formcontainer {
     display: flex;
     flex-flow: column;
     justify-content: space-evenly;
     width: 25vw ;
     height: 30vw;
     background-color: #f6e7e7; 
-    padding: 1.8rem; 
+    padding: 1.5rem; 
     border: 1px solid black;
     border-radius: 10px;
     color: #1B2021; 
@@ -171,3 +119,17 @@ img {
     display: flex;
     justify-content: center;
 }
+
+#submitbtn {
+    text-align: end;
+    margin: .2rem
+}
+
+/* NEW ART PAGE */
+
+#newForm {
+    display: flex;
+    justify-content: center;
+    color: red;
+}
+

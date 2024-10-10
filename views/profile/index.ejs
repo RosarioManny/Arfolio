@@ -10,13 +10,12 @@
     <%- include('../partials/_navbar.ejs') %>
     <hr>
     <div id="userHeader">
-       
             <% if (!userAbout) {%>
-        <h1 class="Folio">
+        <h1 class="titleCard">
             Your <em>Folio</em>, <%= user.username %> 
         </h1>
             <% } else {%>
-                <h1 class="Folio"> 
+                <h1 class="titleCard"> 
                     Your <em>Folio</em>, <%= userAbout.name %>    
                 </h1>
             <div class="aboutUser">

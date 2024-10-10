@@ -9,10 +9,10 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <hr>
-    <h1 id="editingheader">Editting <em>Your</em> About me...</h1>
+    <h1 class="titleCard">Editting <em>Your</em> About me...</h1>
     <div>
         <form action="/profile?_method=PUT"  method="POST">
-            <div id="editcontainer">
+            <div id="formcontainer">
                 <label for="name">Name: </label>
                 <input 
                 type="text" 
@@ -79,8 +79,8 @@
                     value="<%= userAbout.bio %>"   
                 <% } %>
                 ></textarea>
-                <button id="submitbtn"type="submit">Save Changes</button>
             </div>
+            <button id="submitbtn"type="submit">Save Changes</button>
         </form>
     </div>
 </body>
