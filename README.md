@@ -35,7 +35,7 @@ The User is the main Schema that has a relation to the about Schema and the Artw
 
 ## CONCEPT
 
-![CONCEPT OF WEBSITE LAYOUT](/Image/Art Portfolio (1).png)
+![CONCEPT OF WEBSITE LAYOUT](/Image/Art-Portfolio.png)
 
 ## STRETCH GOALS
 
