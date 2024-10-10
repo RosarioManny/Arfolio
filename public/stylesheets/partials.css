@@ -17,6 +17,13 @@ nav {
     /* background: rgba(237, 253, 255, 1); */
 }
 
+@media (min-width: 450px) {
+    html {
+        font-size: 1rem;
+    } 
+
+}
+
 #Logo {
     height: 4rem;
     width: 4rem;
